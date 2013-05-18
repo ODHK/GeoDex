@@ -1,0 +1,29 @@
+html, body{
+  height: 100%;
+  margin: 0 0;
+}
+
+#map{
+  height: 100%;
+  width: 100%;
+}
+
+#geodex{
+	position:fixed;
+	top:5%;
+	right:2%;
+	width: 400px;
+	height: 90%;
+	background-color: white;
+	margin-right:24px;
+	> header{
+		height: 80px;
+	}
+	> div{
+		height: 100%;
+	}
+
+	> footer{
+		height: 200px;
+	}
+}

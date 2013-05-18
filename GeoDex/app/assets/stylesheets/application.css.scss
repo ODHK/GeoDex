@@ -8,37 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require geodex
  *= require leaflet
  *= require_self
  *= require_tree .
  */
-
-html, body{
-  height: 100%;
-  margin: 0 0;
-}
-
-#map{
-  height: 100%;
-  width: 100%;
-}
-
-#geodex{
-	position:fixed;
-	top:5%;
-	right:2%;
-	width: 400px;
-	height: 90%;
-	background-color: white;
-	margin-right:24px;
-	> header{
-		height: 80px;
-	}
-	> div{
-		height: 100%;
-	}
-
-	> footer{
-		height: 200px;
-	}
-}
