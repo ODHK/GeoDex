@@ -25,6 +25,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Mapping
+gem 'leaflet-rails'
+
 gem 'jquery-rails'
 gem 'simple_form'
 

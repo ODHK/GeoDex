@@ -96,6 +96,7 @@ GEM
     json (1.8.0)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    leaflet-rails (0.5.0)
     listen (1.1.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -218,6 +219,7 @@ DEPENDENCIES
   figaro (= 0.6.3)
   guard-livereload
   jquery-rails
+  leaflet-rails
   mongoid (~> 3.0.0)
   omniauth-facebook
   omniauth-github
