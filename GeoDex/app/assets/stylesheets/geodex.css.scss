@@ -1,3 +1,13 @@
+$groove: url('pattern/groovepaper.png'); 
+$fabric: url('pattern/classy_fabric.png'); 
+$cloth: url('pattern/cloth_alike.png'); 
+$knitting: url('pattern/knitting250px.png'); 
+$arches: url('pattern/arches.png'); 
+$blizzard: url('pattern/blizzard.png'); 
+$diamond: url('pattern/daimond_eyes.png'); 
+$mesh: url('pattern/lghtmesh.png'); 
+$paper: url('pattern/paper.jpg');
+
 html, body{
   height: 100%;
   margin: 0 0;
@@ -49,12 +59,16 @@ html, body{
   background-color: white;
   margin-right:24px;
   border-radius: 24px;
+  footer {
+    background-image: $paper;
+  }
 }
 
 #geodexHeader{
   height: 15%;
   width: 100%;
   background-color: grey;
+  background-image: $paper;
   /*border-radius-top: 4px; */
 
 }

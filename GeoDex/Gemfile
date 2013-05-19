@@ -46,7 +46,7 @@ gem 'cancan'
 gem 'thin'
 
 # Typegraphy
-gem 'font-kit-rails'
+# gem 'font-kit-rails'
 gem 'google-webfonts-rails'
 # gem "font-awesome-rails"
 
