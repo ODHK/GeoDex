@@ -1,6 +1,5 @@
 'use strict';
 
-
 // JS for leaflet 
 $(function(){
 	// Declare app level module which depends on filters, and services
@@ -83,26 +82,27 @@ $(function(){
 		}
 		];
 
-
 		$scope.addItem = function() {
 			var newItemNo = $scope.items.length + 1;
 			$scope.items.push('Item ' + newItemNo);
 		};
 	}
 
-	function onEachFeature(feature, layer) {
-	    // does this feature have a property named popupContent?
-	    if (feature.properties && feature.properties.popupContent) {
-	        layer.bindPopup(feature.properties.popupContent);
-	    }
-	}
 
-	function geodexInit(feat) {
-		L.geoJson(feat, {
-		    onEachFeature: onEachFeature
-		}).addTo(map);
-	}
-
-	function onContentHeaderClick() {
-	};
 })	
+
+function onContentHeaderClick() {
+};
+
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent);
+    }
+}
+
+function geodexInit(feat) {
+	L.geoJson(feat, {
+	    onEachFeature: onEachFeature
+	}).addTo(map);
+}
