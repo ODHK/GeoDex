@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'fontAwesome';
+  src:url('fontawesome-webfont.eot');
+  src:url('fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fontawesome-webfont.svg#fontawesome-webfont') format('svg'),
+    url('fontawesome-webfont.woff') format('woff'),
+    url('fontawesome-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 html, body{
   height: 100%;
   margin: 0 0;
