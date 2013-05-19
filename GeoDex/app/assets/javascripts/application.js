@@ -14,6 +14,6 @@
 //= require jquery
 //= require leaflet
 //= require jquery_ujs
+//= require geodex
 //= require ui-bootstrap-custom-0.4.0-SNAPSHOT
 //= require_tree .
-//= require geodex

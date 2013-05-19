@@ -8,9 +8,9 @@
           <a href="#"><i class="icon-fixed-width icon-plus"></i></a> 
         </button>
       </div>
-      Search: <input ng-model="query">
+      <input ng-model="query" placeholder="Search">
     </header>
-    <div id="contentContainer" ng-controller="AccordionDemoCtrl">
+    <div id="contentContainer" ng-controller="AccordionController">
   	<ul class="auth-list">
   	    <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook), :class => 'button auth-facebook' %></li>
   	    <li><%= link_to "Google", user_omniauth_authorize_path(:google_oauth2), :class => 'button auth-google' %></li>
