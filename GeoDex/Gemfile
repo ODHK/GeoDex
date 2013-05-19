@@ -36,6 +36,7 @@ gem "figaro", "= 0.6.3"
 
 # User authorization & authentication
 gem 'devise'
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2' 

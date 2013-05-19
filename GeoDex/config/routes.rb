@@ -1,9 +1,20 @@
 GeoDex::Application.routes.draw do
+
   get "pages/index"
 
   resources :features
 
   root :to => "pages#index"
+
+  resources :users
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  devise_scope :user do 
+    get '/logout', :to => 'devise/sessions#destroy'
+  end
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
