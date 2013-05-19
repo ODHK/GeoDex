@@ -1,3 +1,13 @@
+$groove: url('patterns/groovepaper.png'); 
+$fabric: url('patterns/classy_fabric.png'); 
+$cloth: url('patterns/cloth_alike.png'); 
+$knitting: url('patterns/knitting250px.png'); 
+$arches: url('patterns/arches.png'); 
+$blizzard: url('patterns/blizzard.png'); 
+$diamond: url('patterns/daimond_eyes.png'); 
+$mesh: url('patterns/lghtmesh.png'); 
+$paper: url('patterns/paper.jpg');
+
 @font-face {
   font-family: 'fontAwesome';
   src:url('fontawesome-webfont.eot');
@@ -61,9 +71,13 @@ html, body{
   background-color: rgba(255,255,255, 0.70);
   margin-right:24px;
   border-radius: 24px;
-  background-image: url('../images/patterns/paper.jpg');
 }
 
+  footer {
+    background-image: $paper;
+  }
+}  
+  
 
 
 #geodexHeader{
@@ -73,6 +87,7 @@ background-color: grey;
 color: #dadada;
 padding-top: 10px;
   border-radius-top: 4px;
+  background-image: $paper;
 }
 
 #geodexHeader h1 {
