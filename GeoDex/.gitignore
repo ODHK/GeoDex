@@ -13,6 +13,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+<<<<<<< HEAD
+.DS_Store
+=======
 
 # Ignore the Auth tokens.
 config/application.yml
+>>>>>>> 37f1d1e24ff26bfa800760319ee6ebd2a8e2aa8f

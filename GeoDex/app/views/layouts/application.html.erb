@@ -5,10 +5,11 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%# google_webfonts_init({google: ['OpenSans', 'Oxygen']}) %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<p class="notice hide"><%= notice %></p>
+<p class="alert hide"><%= alert %></p>
 
 <%= yield %>
 

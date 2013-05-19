@@ -45,6 +45,11 @@ gem 'cancan'
 # Use thin as the app server
 gem 'thin'
 
+# Typegraphy
+gem 'font-kit-rails'
+gem 'google-webfonts-rails'
+# gem "font-awesome-rails"
+
 # Misc
 gem 'awesome_print'
 gem 'redcarpet'

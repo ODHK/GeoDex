@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require geodex
+ *= require bootstrap
+ *= require font-awesome.min
  *= require leaflet
  *= require_self
  *= require_tree .
