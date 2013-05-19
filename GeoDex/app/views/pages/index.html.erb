@@ -1,22 +1,33 @@
 <div id="map"></div>
-<div id="geodex">
-	<header>LIST</header>
-	<div></div>
-	<footer>ACTIONBAR</footer>
+  <div id="geodex">
+    <header id="geodexHeader">
+      <h1>Cycling Routes</h1>
+      
+      <div id="addData">
+        <button  value="addData">
+          <a href="#"><i class="icon-fixed-width icon-plus"></i></a> 
+        </button>
+      </div>
+      Search: <input ng-model="query">
+    </header>
+    <div id="contentContainer" ng-controller="AccordionDemoCtrl">
+      <accordion close-others="oneAtATime">
+        <accordion-group heading="{{group.title}}" ng-repeat="group in groups | filter:query" ng-click="onContentHeaderClick()">
+        {{group.content}}
+      </accordion-group>
+    </accordion>
+  </div>
+  <footer id="actionBar">
+    <h4>ACTIONBAR</h4>
+    <div id="social-nav" class="">
+      <ul>
+        <li><a href="#"><i class="icon-fixed-width icon-facebook"></i></a></li>
+        <li><a href="#"><i class="icon-fixed-width icon-twitter"></i></a></li>
+        <li><a href="#"><i class="icon-fixed-width icon-google-plus"></i></a></li>
+      </ul>
+    </div>
+   <!-- <button class="btn" ng-click="goToFB()">Facebook</button>
+   <button class="btn" ng-click="goToTwit()">Twitter</button>
+   <button class="btn" ng-click="goToGooglePlus()">G +</button> -->
+ </footer>
 </div>
-
-<script>
-	$(function(){
-	var map = L.map('map').setView([22.25018, 114.18571], 13);
-	console.log(map)
-
-	var cloudmade = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/{styleID}/256/{z}/{x}/{y}.png', {
-		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-		minZoom: 11,
-		key: 'BC9A493B41014CAABB98F0471D759707',
-		styleID: 1714, 
-		reuseTiles: true
-	}).addTo(map);
-	console.log(cloudmade)
-})	
-</script>
