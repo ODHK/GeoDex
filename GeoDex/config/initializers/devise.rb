@@ -245,7 +245,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
   require "omniauth-facebook"
   require "omniauth-google-oauth2"
-  # require "omniauth-github"
+  require "omniauth-github"
 
   FB_APP_ID = ENV["ODHK_FACEBOOK_APP_ID"]
   FB_APP_SECRET = ENV["ODHK_FACEBOOK_APP_SECRET"]
@@ -253,11 +253,10 @@ Devise.setup do |config|
   G_APP_ID = ENV["ODHK_GOOGLE_CLIENT_ID"]
   G_APP_SECRET = ENV["ODHK_GOOGLE_CLIENT_SECRET"] 
 
-  # GH_APP_ID = ENV["ODHK_GITHUB_APP_ID"]
-  # GH_APP_SECRET = ENV["ODHK_GITHUB_APP_SECRET"]
+  GH_APP_ID = ENV["ODHK_GITHUB_APP_ID"]
+  GH_APP_SECRET = ENV["ODHK_GITHUB_APP_SECRET"]
 
-  # config.omniauth :github, GH_APP_ID, GH_APP_SECRET
-
+  config.omniauth :github, GH_APP_ID, GH_APP_SECRET
   config.omniauth :facebook, FB_APP_ID, FB_APP_SECRET 
   config.omniauth :google_oauth2, G_APP_ID, G_APP_SECRET, { access_type: "offline", approval_prompt: "" }
 
