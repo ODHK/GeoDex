@@ -15,6 +15,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular-ui-bootstrap-tpls
+//= require ui-bootstrap-custom-0.4.0-SNAPSHOT
 //= require leaflet
 //= require features
 //= require geodex

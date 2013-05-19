@@ -6,7 +6,7 @@ $(function(){
 	angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers', 'ui.bootstrap']);
 
 	// JS for Angular
-	function AccordionDemoCtrl($scope) {
+	function AccordionController($scope) {
 		$scope.oneAtATime = true;
 
 		$scope.groups = [
