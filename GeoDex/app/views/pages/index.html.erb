@@ -11,6 +11,11 @@
       Search: <input ng-model="query">
     </header>
     <div id="contentContainer" ng-controller="AccordionDemoCtrl">
+  	<ul class="auth-list">
+  	    <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook), :class => 'button auth-facebook' %></li>
+  	    <li><%= link_to "Google", user_omniauth_authorize_path(:google_oauth2), :class => 'button auth-google' %></li>
+  	    <li><%= link_to "Github", user_omniauth_authorize_path(:github), :class => 'button auth-github' %></li>
+    </ul>
       <accordion close-others="oneAtATime">
         <accordion-group heading="{{group.title}}" ng-repeat="group in groups | filter:query" ng-click="onContentHeaderClick()">
         {{group.content}}
