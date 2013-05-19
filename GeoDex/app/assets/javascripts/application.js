@@ -11,10 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require angular
+//= require angular-ui
 //= require jquery
-//= require leaflet
 //= require jquery_ujs
-//= require ui-bootstrap-custom-0.4.0-SNAPSHOT
+//= require angular-ui-bootstrap-tpls
+//= require leaflet
 //= require features
 //= require geodex
 //= require_tree .
