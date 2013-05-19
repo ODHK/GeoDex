@@ -3,7 +3,9 @@ class FeaturesController < ApplicationController
   # GET /features.json
   def index
     @features = Feature.all
-
+    
+    ap @features
+    ap "hello"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @features }
