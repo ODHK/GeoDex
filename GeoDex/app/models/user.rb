@@ -156,16 +156,16 @@ class User
   end
 
   def self.fill_in_user_profile(user, opts={})
-    user.name ||= opts[:name]
-    user.email ||= opts[:email] 
-    user.github ||= opts[:github] 
-    user.facebook ||= opts[:facebook] 
-    user.googleplus ||= opts[:googleplus] 
-    user.twitter ||= opts[:twitter] 
-    user.avatar ||= opts[:avatar] 
-    user.blog ||= opts[:blog] 
-    user.company ||= opts[:company] 
-    user.location ||= opts[:location]
+    user['name'] ||= opts[:name]
+    user['email'] ||= opts[:email] 
+    user['github'] ||= opts[:github]
+    user['facebook'] ||= opts[:facebook] 
+    user['googleplus'] ||= opts[:googleplus] 
+    user['twitter'] ||= opts[:twitter] 
+    user['avatar'] ||= opts[:avatar] 
+    user['blog'] ||= opts[:blog] 
+    user['company'] ||= opts[:company] 
+    user['location'] ||= opts[:location]
     user.save
     return user
   end
