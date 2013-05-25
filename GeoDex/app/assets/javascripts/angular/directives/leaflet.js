@@ -3,6 +3,7 @@ var leafletDirective = angular.module("leaflet-directive", []);
 leafletDirective.directive("leaflet", ["$http", "$log", function ($http, $log) {
 
     var defaults = {
+        minZoom: 8,
         maxZoom: 14,
         tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         icon: {
@@ -21,7 +22,11 @@ leafletDirective.directive("leaflet", ["$http", "$log", function ($http, $log) {
         path: {
             weight: 10,
             opacity: 1
-        }
+        },
+        key: null,
+        styleID: 0,
+        reuseTiles: true,
+        attribution: null
     };
 
     return {
@@ -41,9 +46,20 @@ leafletDirective.directive("leaflet", ["$http", "$log", function ($http, $log) {
 
             $scope.leaflet = {};
             $scope.leaflet.map = !!attrs.testing ? map : 'Add testing="testing" to <leaflet> tag to inspect this object';
+            $scope.leaflet.minZoom = !!(attrs.defaults && $scope.defaults.mminZoom) ? parseInt($scope.defaults.minZoom, 10) : defaults.minZoom;
             $scope.leaflet.maxZoom = !!(attrs.defaults && $scope.defaults.maxZoom) ? parseInt($scope.defaults.maxZoom, 10) : defaults.maxZoom;
             $scope.leaflet.tileLayer = !!(attrs.defaults && $scope.defaults.tileLayer) ? $scope.defaults.tileLayer : defaults.tileLayer;
-            L.tileLayer($scope.leaflet.tileLayer, { maxZoom: $scope.leaflet.maxZoom }).addTo(map);
+            $scope.leaflet.key = !!(attrs.defaults && $scope.defaults.key) ? $scope.defaults.key : defaults.key;
+            $scope.leaflet.styleID = !!(attrs.defaults && $scope.defaults.styleID) ? parseInt($scope.defaults.styleID, 10) : defaults.styleID;
+            $scope.leaflet.reuseTiles = !!(attrs.defaults && $scope.defaults.reuseTiles) ? $scope.defaults.reuseTiles : defaults.reuseTiles;
+            $scope.leaflet.attribution = !!(attrs.defaults && $scope.defaults.attribution) ? $scope.defaults.attribution : defaults.attribution;
+            L.tileLayer($scope.leaflet.tileLayer, { minZoom: $scope.leaflet.minZoom, 
+                                                    maxZoom: $scope.leaflet.maxZoom,
+                                                    key: $scope.leaflet.key,
+                                                    styleID: $scope.leaflet.styleID,
+                                                    reuseTiles: $scope.leaflet.reuseTiles,
+                                                    attribution: $scope.leaflet.attribution
+                                                }).addTo(map);
 
             setupCenter();
             setupMarkers();
