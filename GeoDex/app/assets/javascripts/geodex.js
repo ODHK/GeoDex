@@ -1,108 +1,33 @@
 'use strict';
 
 // JS for leaflet 
-$(function(){
-	// Declare app level module which depends on filters, and services
-	angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers', 'ui.bootstrap']);
 
-	// JS for Angular
-	function AccordionController($scope) {
-		$scope.oneAtATime = true;
+// Create the GeoDex module and assign it to window.App.
+// We also add the dependency of ngResource which provides simple REST 
+// client functionality.
 
-		$scope.groups = [
-		{
-			title: "That one In the North",
-			content: "Lorem ipsum poopem sapsam"
+window.App = angular.module('GeoDex', ['leaflet-directive','ngResource'])
 
-		},
-		{
-			title: "That one In the South",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthEast",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the North",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the North",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-		{
-			title: "That one In the NorthWest",
-			content: "Lorem ipsum poopem sapsam"
-		},
-
-		{
-			title: "That one In the North",
-			content: "Lorem ipsum poopem sapsam"
-		}
-		];
-
-		$scope.addItem = function() {
-			var newItemNo = $scope.items.length + 1;
-			$scope.items.push('Item ' + newItemNo);
-		};
-	}
-
-
-})	
-
-function onContentHeaderClick() {
-};
-
-function onEachFeature(feature, layer) {
-    // does this feature have a property named popupContent?
-    if (feature.properties && feature.properties.popupContent) {
-        layer.bindPopup(feature.properties.popupContent);
+angular.extend($scope, {
+    defaults: {
+        tileLayer: "http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
+        maxZoom: 14,
+        path: {
+            weight: 10,
+            opacity: 1
+	        }
+	    },
+	center: {
+        lat: 51.505,
+        lng: -0.09,
+        zoom: 8
     }
-}
+});
 
 function geodexInit(feat) {
 	L.geoJson(feat, {
 	    onEachFeature: onEachFeature
 	}).addTo(map);
 }
+
+geodexInit(featureCollection);

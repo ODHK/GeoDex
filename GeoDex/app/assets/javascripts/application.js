@@ -10,13 +10,11 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require angular
-//= require angular-ui
 //= require jquery
 //= require jquery_ujs
-//= require angular-ui-bootstrap-tpls
-//= require ui-bootstrap-custom-0.4.0-SNAPSHOT
 //= require leaflet
-//= require features
+//= require angular
 //= require geodex
+//= require_tree ./angular
+//= require features
 //= require_tree .

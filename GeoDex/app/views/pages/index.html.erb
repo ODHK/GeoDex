@@ -1,7 +1,13 @@
-<div id="map"></div>
-  <div id="geodex">
+<leaflet defaults="defaults" center="center"></leaflet>
+  <div id="geodex" ng-controller="FeaturesCtrl">
     <header id="geodexHeader">
-      <h1>Cycling Routes</h1>
+      <h1>{{message}}</h1>
+	<div>
+		<label>Name:</label>
+		<input type="text" ng-model="yourName" placeholder="Enter a name here">
+		<hr>
+		<h1>Hello {{yourName}}!</h1>
+	</div>
       
       <div id="addData">
           <a href="#"><i class="icon-fixed-width icon-plus"></i></a> 
@@ -34,62 +40,3 @@
    <button class="btn" ng-click="goToGooglePlus()">G +</button> -->
  </footer>
 </div>
-<script>
-'use strict';
-
-// JS for leaflet 
-// $(function(){
-	// Declare app level module which depends on filters, and services
-	angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers', 'ui.bootstrap']);
-	// console.log(angular)
-
-	// JS for Angular
-	function AccordionDemoCtrl($scope) {
-		$scope.oneAtATime = true;
-
-		$scope.groups = [
-		{
-			title: "That one In the North",
-			content: "Lorem ipsum poopem sapsam"
-
-		}];
-
-		$scope.addItem = function() {
-			var newItemNo = $scope.items.length + 1;
-			$scope.items.push('Item ' + newItemNo);
-		};
-	}
-
-
-	function onContentHeaderClick() {
-	};
-
-	function onEachFeature(feature, layer) {
-	    // does this feature have a property named popupContent?
-	    if (feature.properties && feature.properties.popupContent) {
-	        layer.bindPopup(feature.properties.popupContent);
-	    }
-	}
-
-
-// });
-	var map = L.map('map').setView([22.25018, 114.18571], 13);
-
-	var cloudmade = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/{styleID}/256/{z}/{x}/{y}.png', {
-		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-		minZoom: 11,
-		key: 'BC9A493B41014CAABB98F0471D759707',
-		styleID: 96219, 
-		reuseTiles: true
-		}).addTo(map);	
-	
-
-	function geodexInit(feat) {
-		L.geoJson(feat, {
-		    onEachFeature: onEachFeature
-		}).addTo(map);
-	}
-	
-	geodexInit(featureCollection);
-
-</script>

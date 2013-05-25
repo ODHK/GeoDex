@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="GeoDex">
 <head>
   <title>GeoDex</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%# google_webfonts_init({google: ['OpenSans', 'Oxygen']}) %>
 </head>
@@ -12,6 +11,6 @@
 <p class="alert hide"><%= alert %></p>
 
 <%= yield %>
-
+<%= javascript_include_tag "application" %>
 </body>
 </html>
