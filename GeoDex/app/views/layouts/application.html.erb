@@ -6,11 +6,12 @@
   <%= csrf_meta_tags %>
   <%# google_webfonts_init({google: ['OpenSans', 'Oxygen']}) %>
 </head>
-<body>
+<body ng-controller="FeaturesCtrl">
 <p class="notice hide"><%= notice %></p>
 <p class="alert hide"><%= alert %></p>
 
 <%= yield %>
+
 <%= javascript_include_tag "application" %>
 </body>
 </html>

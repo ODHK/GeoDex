@@ -1,42 +1,30 @@
-<leaflet defaults="defaults" center="center"></leaflet>
-  <div id="geodex" ng-controller="FeaturesCtrl">
-    <header id="geodexHeader">
-      <h1>{{message}}</h1>
-	<div>
-		<label>Name:</label>
-		<input type="text" ng-model="yourName" placeholder="Enter a name here">
-		<hr>
-		<h1>Hello {{yourName}}!</h1>
-	</div>
-      
-      <div id="addData">
-          <a href="#"><i class="icon-fixed-width icon-plus"></i></a> 
-      </div>
-      <input ng-model="query" placeholder="Search">
-    </header>
-    <div id="contentContainer" ng-controller="AccordionController">
-  	<ul class="auth-list">
-  	    <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook), :class => 'button auth-facebook' %></li>
-  	    <li><%= link_to "Google", user_omniauth_authorize_path(:google_oauth2), :class => 'button auth-google' %></li>
-  	    <li><%= link_to "Github", user_omniauth_authorize_path(:github), :class => 'button auth-github' %></li>
-    </ul>
-    <div id="contentContainer" ng-controller="AccordionDemoCtrl">
-      <accordion close-others="oneAtATime">
-        <accordion-group heading="{{group.title}}" ng-repeat="group in groups | filter:query" ng-click="onContentHeaderClick()">
-        {{group.content}}
-      </accordion-group>
-    </accordion>
-  </div>
-  <footer id="actionBar">
-    <div id="social-nav" class="">
-      <ul>
-        <li><a href="#"><i class="icon-fixed-width icon-facebook"></i></a></li>
-        <li><a href="#"><i class="icon-fixed-width icon-twitter"></i></a></li>
-        <li><a href="#"><i class="icon-fixed-width icon-google-plus"></i></a></li>
-      </ul>
+<leaflet center="hongkong" id="map" defaults="geostyles"></leaflet>
+<div id="geodex" ng-controller="FeaturesCtrl">
+  <header id="geodexHeader">
+    <h1>{{title}}</h1>  
+    <div id="addData">
+        <a href="#"><i class="icon-fixed-width icon-plus"></i></a> 
     </div>
-   <!-- <button class="btn" ng-click="goToFB()">Facebook</button>
-   <button class="btn" ng-click="goToTwit()">Twitter</button>
-   <button class="btn" ng-click="goToGooglePlus()">G +</button> -->
- </footer>
+    <input ng-model="query" placeholder="Search">
+  </header>
+  <div id="contentContainer">
+	<ul class="auth-list">
+	    <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook), :class => 'button auth-facebook' %></li>
+	    <li><%= link_to "Google", user_omniauth_authorize_path(:google_oauth2), :class => 'button auth-google' %></li>
+	    <li><%= link_to "Github", user_omniauth_authorize_path(:github), :class => 'button auth-github' %></li>
+  </ul>
+  <div id="contentContainer">
+</div>
+<footer id="actionBar">
+  <div id="social-nav" class="">
+    <ul>
+      <li><a href="#"><i class="icon-fixed-width icon-facebook"></i></a></li>
+      <li><a href="#"><i class="icon-fixed-width icon-twitter"></i></a></li>
+      <li><a href="#"><i class="icon-fixed-width icon-google-plus"></i></a></li>
+    </ul>
+  </div>
+ <!-- <button class="btn" ng-click="goToFB()">Facebook</button>
+ <button class="btn" ng-click="goToTwit()">Twitter</button>
+ <button class="btn" ng-click="goToGooglePlus()">G +</button> -->
+</footer>
 </div>
