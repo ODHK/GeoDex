@@ -12,6 +12,8 @@ function onContentHeaderClick() {};
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
+    // No.  This is from my project.  Might be useful if we want to add 
+    // one of the properties as a popup on the marker... -M
     if (feature.properties && feature.properties.popupContent) {
         layer.bindPopup(feature.properties.popupContent);
     }
